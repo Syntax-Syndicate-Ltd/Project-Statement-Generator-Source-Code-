@@ -55,7 +55,7 @@ Includes authentication, project statement input, and formatted output.This proj
 **1. Clone the repository**
 
 ```
-git clone <your-repo-url>
+git clone https://github.com/Syntax-Syndicate-Ltd/Project-Statement-Generator-Source-Code-.git
 cd (your_path_here)
 ```
 
