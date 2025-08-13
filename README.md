@@ -80,7 +80,28 @@ FLASK_ENV=development
 SECRET_KEY=your-secret-key
 GROQ_API_KEY=your-api-key
 ```
+Follow these steps to get your API key:
 
+Go to the official Groq Developer Portal:
+👉 https://console.groq.com/keys
+
+Sign up or log in with your account.
+
+Navigate to the API Keys section.
+
+Click "Create New API Key" and copy it.
+
+Open your project folder and locate the .env file (create one if it doesn't exist).
+
+Paste your key in the .env file like this:
+
+```
+GROQ_API_KEY=your-api-key-here
+```
+Save the file — you’re done! 🎉
+
+⚠ Important:
+Never share your API key publicly (e.g., on GitHub). Your .env file is already listed in .gitignore so it won’t be uploaded.
 **5.Run the app**
 
 ```
