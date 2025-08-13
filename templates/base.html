@@ -42,16 +42,34 @@
     </nav>
 
     <div class="container mt-4">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+       {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- Store flashed messages (with category info) into a variable named 'messages' -->
+
+    {% if messages %}
+        <!-- If there are any flashed messages -->
+
+        {% for category, message in messages %}
+            <!-- Loop through each message and its category (e.g., 'success', 'error', 'warning') -->
+
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
+                <!-- 
+                  Create a Bootstrap alert:
+                  - If category is 'error', use 'alert-danger' (red).
+                  - Otherwise, default to 'alert-success' (green).
+                  - 'alert-dismissible fade show' makes it closable with animation.
+                -->
+
+                {{ message }}
+                <!-- Display the actual flashed message text -->
+
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <!-- Close button for the alert (Bootstrap 5 syntax) -->
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<!-- End of the flashed messages block -->
+
 
         {% block content %}{% endblock %}
     </div>
