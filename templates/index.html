@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0"><i class="bi bi-lightbulb-fill"></i> Project Statement Generator</h2>
+                <p class="mb-0">Provide details about your project and we'll generate a comprehensive project statement</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('generate') }}">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="project_type" class="form-label">Project Type *</label>
+                            <select class="form-select" id="project_type" name="project_type" required>
+                                <option value="">Select project type</option>
+                                <option value="Software Development">Software Development</option>
+                                <option value="Research">Research</option>
+                                <option value="Marketing Campaign">Marketing Campaign</option>
+                                <option value="Product Launch">Product Launch</option>
+                                <option value="Infrastructure">Infrastructure</option>
+                                <option value="Process Improvement">Process Improvement</option>
+                                <option value="Event">Event</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="domain" class="form-label">Domain *</label>
+                            <select class="form-select" id="domain" name="domain" required>
+                                <option value="">Select domain</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Education">Education</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Government">Government</option>
+                                <option value="Non-profit">Non-profit</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="goals" class="form-label">Project Goals *</label>
+                        <textarea class="form-control" id="goals" name="goals" rows="3" 
+                                  placeholder="Describe the main goals and objectives of your project" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="audience" class="form-label">Target Audience</label>
+                        <textarea class="form-control" id="audience" name="audience" rows="2" 
+                                  placeholder="Who is this project for? (e.g., customers, employees, stakeholders)"></textarea>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="timeline" class="form-label">Timeline</label>
+                            <input type="text" class="form-control" id="timeline" name="timeline" 
+                                   placeholder="e.g., 3 months, Q1 2024, 6 weeks">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="budget" class="form-label">Budget</label>
+                            <input type="text" class="form-control" id="budget" name="budget" 
+                                   placeholder="e.g., Rs.5000, Not specified">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="constraints" class="form-label">Constraints or Limitations</label>
+                        <textarea class="form-control" id="constraints" name="constraints" rows="2" 
+                                  placeholder="Any limitations, restrictions, or special considerations"></textarea>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-magic"></i> Generate Project Statement
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">How It Works</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-1-circle-fill fs-1 text-primary"></i>
+                        </div>
+                        <h5>Provide Details</h5>
+                        <p>Fill in the form with information about your project</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-2-circle-fill fs-1 text-primary"></i>
+                        </div>
+                        <h5>AI Processing</h5>
+                        <p>AI model processes your input.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-3-circle-fill fs-1 text-primary"></i>
+                        </div>
+                        <h5>Get Results</h5>
+                        <p>Receive a comprehensive project statement instantly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

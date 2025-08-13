@@ -1,0 +1,5 @@
+Flask
+python-dotenv
+groq
+flask_sqlalchemy
+werkzeug
