@@ -102,6 +102,7 @@ Save the file — you’re done! 🎉
 
 ⚠ Important:
 Never share your API key publicly (e.g., on GitHub). Your .env file is already listed in .gitignore so it won’t be uploaded.
+
 **5.Run the app**
 
 ```
